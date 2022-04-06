@@ -1,0 +1,33 @@
+name: Setup
+
+inputs:
+  nettbureau-auth-token:
+    description: "Authentication token for Nettbureau packages"
+    required: true
+  fontawesome-auth-token:
+    description: "Authentication token for Fontawesome packages"
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+
+    - name: Setup private registries
+      run: |
+        npm config set "@nettbureau:registry" https://npm.pkg.github.com/
+        npm config set "//npm.pkg.github.com/:_authToken" ${{ inputs.nettbureau-auth-token }}
+        npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+        npm config set "//npm.fontawesome.com/:_authToken" ${{ inputs.fontawesome-auth-token }}
+      shell: bash
+
+    - name: Install dependencies
+      uses: bahmutov/npm-install@v1
+      with:
+        install-command: yarn --frozen-lockfile --ignore-scripts

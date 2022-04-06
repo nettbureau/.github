@@ -1,0 +1,43 @@
+name: Build
+
+on:
+  workflow_call:
+    secrets:
+      GITHUB_TOKEN:
+        required: true
+      FONTAWESOME_AUTH_TOKEN:
+        required: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/setup
+        with:
+          nettbureau-auth-token: ${{ secrets.GITHUB_TOKEN }}
+          fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
+
+      - name: Run linting
+        run: yarn lint
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/setup
+        with:
+          nettbureau-auth-token: ${{ secrets.GITHUB_TOKEN }}
+          fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
+
+      - name: Run tests
+        run: yarn test --ci --coverage
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/setup
+        with:
+          nettbureau-auth-token: ${{ secrets.GITHUB_TOKEN }}
+          fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
+
+      - name: Build code
+        run: yarn build

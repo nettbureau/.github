@@ -1,0 +1,11 @@
+name: Report Size
+
+on:
+  workflow_call:
+
+jobs:
+  report-size:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report size
+        uses: preactjs/compressed-size-action@v2

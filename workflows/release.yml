@@ -1,0 +1,27 @@
+name: Install
+
+on:
+  workflow_call:
+    secrets:
+      NETTBUREAU_AUTH_TOKEN:
+        required: true
+      FONTAWESOME_AUTH_TOKEN:
+        required: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/actions/setup
+        with:
+          nettbureau-auth-token: ${{ secrets.GITHUB_TOKEN }}
+          fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
+
+      - name: Build code
+        run: yarn build
+
+      - name: Release
+        run: npx auto shipit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
