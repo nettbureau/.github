@@ -3,8 +3,6 @@ name: Build
 on:
   workflow_call:
     secrets:
-      GITHUB_TOKEN:
-        required: true
       FONTAWESOME_AUTH_TOKEN:
         required: true
 

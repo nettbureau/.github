@@ -3,8 +3,6 @@ name: Install
 on:
   workflow_call:
     secrets:
-      NETTBUREAU_AUTH_TOKEN:
-        required: true
       FONTAWESOME_AUTH_TOKEN:
         required: true
 
