@@ -2,6 +2,6 @@
 
 # Nettbureau
 
-## We develop digital services
+Nettbureau is a Norwegian company with a curious name, countless computers and copious amounts of coffee.
 
-Nettbureau is a Norwegian startup – or scaleup, to be precise. We are neither consultants nor agents in «Le Bureau», but we create our very own digital services.
+Today, we are one of Scandinavia's leading providers of comparison services, and are expanding across Europe – with operations in Norway, Sweden, Denmark, Spain, Italy and Germany.
