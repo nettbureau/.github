@@ -10,7 +10,10 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: nettbureau/.github/.github/actions/setup
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - uses: ./.github/actions/setup
         with:
           nettbureau-auth-token: ${{ secrets.GITHUB_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
