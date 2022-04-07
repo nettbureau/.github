@@ -19,7 +19,7 @@ runs:
       with:
         node-version: 16
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ inputs.nettbureau-auth-token }}
 
     - name: Setup private registries
       run: |
