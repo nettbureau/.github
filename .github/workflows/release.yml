@@ -18,6 +18,13 @@ jobs:
           nettbureau-auth-token: ${{ secrets.READ_PACKAGES_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
 
+      - name: Add Custom Registries
+        run: |
+          npm config set "@nettbureau:registry" https://npm.pkg.github.com/
+          npm config set "//npm.pkg.github.com/:_authToken" ${{ secrets.GITHUB_TOKEN }}
+          npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+          npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
+
       - name: Fetch Git tags
         run: git fetch --unshallow --tags
 
