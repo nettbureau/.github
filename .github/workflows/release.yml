@@ -15,7 +15,7 @@ jobs:
       - name: Install dependencies
         uses: nettbureau/.github/.github/actions/install@main
         with:
-          nettbureau-auth-token: ${{ secrets.NETTBUREAU_AUTH_TOKEN }}
+          nettbureau-auth-token: ${{ secrets.GITHUB_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
 
       - name: Fetch Git tags
