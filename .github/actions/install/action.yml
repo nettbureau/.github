@@ -18,6 +18,8 @@ runs:
       uses: actions/setup-node@v3
       with:
         node-version: 16
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Setup private registries
       run: |
