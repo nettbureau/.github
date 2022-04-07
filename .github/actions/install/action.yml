@@ -2,10 +2,8 @@ name: Install
 
 inputs:
   nettbureau-auth-token:
-    description: "Authentication token for Nettbureau packages"
     required: true
   fontawesome-auth-token:
-    description: "Authentication token for Fontawesome packages"
     required: true
 
 runs:
