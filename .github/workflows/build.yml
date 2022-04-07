@@ -10,7 +10,8 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: nettbureau/.github/.github/actions/setup@main
+      - name: Install dependencies
+        uses: nettbureau/.github/.github/actions/install@main
         with:
           nettbureau-auth-token: ${{ secrets.GITHUB_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
@@ -21,7 +22,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: nettbureau/.github/.github/actions/setup@main
+      - name: Install dependencies
+        uses: nettbureau/.github/.github/actions/install@main
         with:
           nettbureau-auth-token: ${{ secrets.GITHUB_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
@@ -32,7 +34,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: nettbureau/.github/.github/actions/setup@main
+      - name: Install dependencies
+        uses: nettbureau/.github/.github/actions/install@main
         with:
           nettbureau-auth-token: ${{ secrets.GITHUB_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
