@@ -3,13 +3,10 @@ name: Build
 on:
   workflow_call:
     secrets:
-      NETTBUREAU_AUTH_TOKEN:
+      GITHUB_TOKEN:
         required: true
       FONTAWESOME_AUTH_TOKEN:
         required: true
-
-env:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   lint:
