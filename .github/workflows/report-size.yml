@@ -13,4 +13,5 @@ jobs:
 
       - name: Report size
         uses: preactjs/compressed-size-action@v2
-        pattern: "./packages/*/dist/*.{js,css}"
+        with:
+          pattern: "./packages/*/dist/*.{js,css}"
