@@ -34,9 +34,6 @@ jobs:
       - name: Test npmrc
         run: npm config list
 
-      - name: Test npm login
-        run: npm login --scope=@nettbureau --registry=https://npm.pkg.github.com
-
       - name: Test env
         run: yarn exec -- node -e "console.log(process.env)"
 
