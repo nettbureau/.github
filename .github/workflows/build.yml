@@ -8,6 +8,7 @@ on:
 
 jobs:
   lint:
+    name: Lint
     runs-on: ubuntu-latest
     steps:
       - name: Install dependencies
@@ -16,10 +17,11 @@ jobs:
           nettbureau-auth-token: ${{ secrets.GITHUB_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
 
-      - name: Run linting
+      - name: Check linting
         run: yarn lint
 
   test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - name: Install dependencies
@@ -28,10 +30,11 @@ jobs:
           nettbureau-auth-token: ${{ secrets.AUTH_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
 
-      - name: Run tests
+      - name: Check tests
         run: yarn test --ci --coverage
 
   build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Install dependencies

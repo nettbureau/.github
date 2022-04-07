@@ -8,6 +8,7 @@ on:
 
 jobs:
   release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
       - name: Install dependencies
@@ -16,26 +17,13 @@ jobs:
           nettbureau-auth-token: ${{ secrets.GITHUB_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
 
-      - name: Add Custom Registries
-        run: |
-          npm config set "@nettbureau:registry" https://npm.pkg.github.com/
-          npm config set "//npm.pkg.github.com/:_authToken" ${{ secrets.GITHUB_TOKEN }}
-          npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-          npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
-
-      - name: Fetch Git tags
+      - name: Fetch tags
         run: git fetch --unshallow --tags
 
       - name: Build code
         run: yarn build
 
-      - name: Test npmrc
-        run: npm config list
-
-      - name: Test env
-        run: yarn exec -- node -e "console.log(process.env)"
-
-      - name: Release
+      - name: Release packages
         run: yarn auto shipit
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
