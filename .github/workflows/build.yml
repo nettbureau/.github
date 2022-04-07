@@ -16,7 +16,7 @@ jobs:
           repository: nettbureau/.github
           path: .github
 
-      - uses: .github/.github/actions/setup
+      - uses: ./github/.github/actions/setup
         with:
           nettbureau-auth-token: ${{ secrets.GITHUB_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
@@ -33,7 +33,7 @@ jobs:
           repository: nettbureau/.github
           path: .github
 
-      - uses: .github/.github/actions/setup
+      - uses: ./github/.github/actions/setup
         with:
           nettbureau-auth-token: ${{ secrets.GITHUB_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
@@ -50,7 +50,7 @@ jobs:
           repository: nettbureau/.github
           path: .github
 
-      - uses: .github/.github/actions/setup
+      - uses: ./github/.github/actions/setup
         with:
           nettbureau-auth-token: ${{ secrets.GITHUB_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
