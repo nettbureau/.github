@@ -24,11 +24,11 @@ jobs:
       - name: Build code
         run: yarn build
 
+      - name: Test npmrc
+        run: npm config list
+
       - name: Test env
-        run: yarn exec -- node -e "console.log('Hello from Node.js', process.env)"
-        env:
-          GITHUB_TOKEN: ${{ secrets.AUTH_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+        run: yarn exec -- node -e "console.log(process.env)"
 
       - name: Release
         run: yarn auto shipit
