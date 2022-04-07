@@ -3,6 +3,8 @@ name: Build
 on:
   workflow_call:
     secrets:
+      NETTBUREAU_AUTH_TOKEN:
+        required: true
       FONTAWESOME_AUTH_TOKEN:
         required: true
 
@@ -13,7 +15,7 @@ jobs:
       - name: Install dependencies
         uses: nettbureau/.github/.github/actions/install@main
         with:
-          nettbureau-auth-token: ${{ secrets.GITHUB_TOKEN }}
+          nettbureau-auth-token: ${{ secrets.NETTBUREAU_AUTH_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
 
       - name: Run linting
