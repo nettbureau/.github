@@ -31,7 +31,7 @@ jobs:
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
 
       - name: Check tests
-        run: yarn test --ci --coverage
+        run: yarn test
 
   build:
     name: Build
