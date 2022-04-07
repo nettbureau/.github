@@ -3,8 +3,6 @@ name: Install
 on:
   workflow_call:
     secrets:
-      READ_PACKAGES_TOKEN:
-        required: true
       FONTAWESOME_AUTH_TOKEN:
         required: true
 
@@ -15,7 +13,7 @@ jobs:
       - name: Install dependencies
         uses: nettbureau/.github/.github/actions/install@main
         with:
-          nettbureau-auth-token: ${{ secrets.READ_PACKAGES_TOKEN }}
+          nettbureau-auth-token: ${{ secrets.GITHUB_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
 
       - name: Add Custom Registries
@@ -40,6 +38,6 @@ jobs:
       - name: Release
         run: yarn auto shipit
         env:
-          GITHUB_TOKEN: ${{ secrets.READ_PACKAGES_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.READ_PACKAGES_TOKEN }}
-          NPM_TOKEN: ${{ secrets.READ_PACKAGES_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
