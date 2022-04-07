@@ -5,7 +5,12 @@ on:
 
 jobs:
   report-size:
+    name: Report size
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: Report size
         uses: preactjs/compressed-size-action@v2
+        pattern: "./packages/*/dist/*.{js,css}"
