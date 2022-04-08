@@ -33,7 +33,7 @@ jobs:
       - name: Release packages
         run: yarn auto shipit
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_AUTHOR_NAME: nettbureaubot
           GIT_AUTHOR_EMAIL: dev@nettbureau.no
