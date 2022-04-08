@@ -23,8 +23,8 @@ jobs:
       - name: Build code
         run: yarn build
 
+      # Allow bypassing the GitHub branch protection
       - name: Unset header
-        description: "Allow bypassing the GitHub branch protection"
         run: git config --local --unset http.https://github.com/.extraheader
 
       - name: Release packages
