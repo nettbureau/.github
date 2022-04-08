@@ -1,6 +1,8 @@
 name: Install
 
 inputs:
+  admin-token:
+    required: true
   nettbureau-auth-token:
     required: true
   fontawesome-auth-token:
@@ -11,6 +13,7 @@ runs:
   steps:
     - name: Checkout code
       uses: actions/checkout@v3
+        token: ${{ inputs.admin-token }}
 
     - name: Setup Node
       uses: actions/setup-node@v3
