@@ -23,6 +23,10 @@ jobs:
       - name: Build code
         run: yarn build
 
+      - name: Unset header
+        description: "Allow bypassing the GitHub branch protection"
+        run: git config --local --unset http.https://github.com/.extraheader
+
       - name: Release packages
         run: yarn auto shipit
         env:
