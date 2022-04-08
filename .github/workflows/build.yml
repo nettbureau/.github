@@ -30,6 +30,7 @@ jobs:
       - name: Install dependencies
         uses: nettbureau/.github/.github/actions/install@main
         with:
+          admin-token: ${{ secrets.ADMIN_TOKEN }}
           nettbureau-auth-token: ${{ secrets.AUTH_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
 
@@ -43,6 +44,7 @@ jobs:
       - name: Install dependencies
         uses: nettbureau/.github/.github/actions/install@main
         with:
+          admin-token: ${{ secrets.ADMIN_TOKEN }}
           nettbureau-auth-token: ${{ secrets.AUTH_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
 
