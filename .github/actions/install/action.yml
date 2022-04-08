@@ -13,6 +13,7 @@ runs:
   steps:
     - name: Checkout code
       uses: actions/checkout@v3
+      with:
         token: ${{ inputs.admin-token }}
 
     - name: Setup Node
