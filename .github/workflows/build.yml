@@ -3,8 +3,6 @@ name: Build
 on:
   workflow_call:
     secrets:
-      ADMIN_TOKEN:
-        required: true
       FONTAWESOME_AUTH_TOKEN:
         required: true
 
@@ -13,13 +11,18 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
+      # Check out the code in the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node and install all dependencies
       - name: Install dependencies
         uses: nettbureau/.github/.github/actions/install@main
         with:
-          admin-token: ${{ secrets.ADMIN_TOKEN }}
-          nettbureau-auth-token: ${{ secrets.GITHUB_TOKEN }}
+          nettbureau-auth-token: ${{ github.token }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
 
+      # Verify that the code meets the linting requirements
       - name: Check linting
         run: yarn lint
 
@@ -27,13 +30,18 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      # Check out the code in the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node and install all dependencies
       - name: Install dependencies
         uses: nettbureau/.github/.github/actions/install@main
         with:
-          admin-token: ${{ secrets.ADMIN_TOKEN }}
-          nettbureau-auth-token: ${{ secrets.AUTH_TOKEN }}
+          nettbureau-auth-token: ${{ github.token }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
 
+      # Verify that all the tests pass
       - name: Check tests
         run: yarn test
 
@@ -41,12 +49,17 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      # Check out the code in the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node and install all dependencies
       - name: Install dependencies
         uses: nettbureau/.github/.github/actions/install@main
         with:
-          admin-token: ${{ secrets.ADMIN_TOKEN }}
-          nettbureau-auth-token: ${{ secrets.AUTH_TOKEN }}
+          nettbureau-auth-token: ${{ github.token }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
 
+      # Verify that the code builds
       - name: Build code
         run: yarn build
