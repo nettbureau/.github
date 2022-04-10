@@ -18,4 +18,4 @@ jobs:
     steps:
       # Automatically apply labels based on the commits
       - name: Apply Labels
-      - uses: bcoe/conventional-release-labels@v1
+        uses: bcoe/conventional-release-labels@v1
