@@ -5,6 +5,7 @@ on:
     secrets:
       FONTAWESOME_AUTH_TOKEN:
         required: true
+  workflow_dispatch:
   push:
     branches:
       - main
