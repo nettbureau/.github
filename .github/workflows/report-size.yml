@@ -9,13 +9,14 @@ on:
 
 jobs:
   report-size:
-    name: Report size
+    name: Report Size
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      # Check out the code in the repository
+      - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Report size
+      - name: Report Size
         uses: preactjs/compressed-size-action@v2
         with:
           pattern: ${{ inputs.pattern }}

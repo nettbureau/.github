@@ -14,30 +14,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Check out the code in the repository
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v3
 
       # Set up Node and install all dependencies
-      - name: Install dependencies
+      - name: Install Dependencies
         uses: nettbureau/.github/.github/actions/install@main
         with:
           nettbureau-auth-token: ${{ github.token }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
 
       # Fetch the latest tags from Git repository
-      - name: Fetch tags
+      - name: Fetch Tags
         run: git fetch --unshallow --tags
 
       # Allow bypassing the GitHub branch protection
-      - name: Unset header
+      - name: Unset Header
         run: git config --local --unset http.https://github.com/.extraheader
 
       # Build source code for release
-      - name: Build code
+      - name: Build Code
         run: yarn build
 
       # Release packages using Auto
-      - name: Release packages
+      - name: Release Packages
         run: yarn auto shipit
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
