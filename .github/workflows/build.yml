@@ -5,6 +5,7 @@ on:
     secrets:
       FONTAWESOME_AUTH_TOKEN:
         required: true
+  pull_request:
 
 jobs:
   lint:
