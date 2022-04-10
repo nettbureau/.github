@@ -9,11 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Automatically add the author of the PR as the assignee
-      - uses: toshimaru/auto-author-assign@v1
+      - name: Add Assignee
+        uses: toshimaru/auto-author-assign@v1
 
   apply-labels:
     name: Apply Labels
     runs-on: ubuntu-latest
     steps:
       # Automatically apply labels based on the commits
-      uses: action-runner/conventional-labeler@v1
+      - name: Apply Labels
+        uses: action-runner/conventional-labeler@v1
