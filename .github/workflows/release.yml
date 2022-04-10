@@ -36,5 +36,5 @@ jobs:
       - name: Release Packages
         run: yarn auto shipit
         env:
-          GITHUB_TOKEN: ${{ github.secret }}
-          NPM_TOKEN: ${{ github.secret }}
+          GITHUB_TOKEN: ${{ github.token }}
+          NPM_TOKEN: ${{ github.token }}
