@@ -6,9 +6,7 @@ on:
       FONTAWESOME_AUTH_TOKEN:
         required: true
 
-permissions:
-  contents: [read, write]
-  packages: [read, write]
+permissions: write-all
 
 jobs:
   release:
@@ -38,5 +36,5 @@ jobs:
       - name: Release Packages
         run: yarn auto shipit
         env:
-          GITHUB_TOKEN: ${{ github.token }}
-          NPM_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
