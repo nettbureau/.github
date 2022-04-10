@@ -1,0 +1,19 @@
+name: Amend Pull Request
+
+on:
+  workflow_call:
+
+jobs:
+  add-assignee:
+    name: Add Assignee
+    runs-on: ubuntu-latest
+    steps:
+      # Automatically add the author of the PR as the assignee
+      - uses: toshimaru/auto-author-assign@v1
+
+  apply-labels:
+    name: Apply Labels
+    runs-on: ubuntu-latest
+    steps:
+      # Automatically apply labels based on the commits
+      uses: action-runner/conventional-labeler@v1
