@@ -10,7 +10,7 @@ jobs:
     steps:
       # Automatically add the author of the PR as the assignee
       - name: Add Assignee
-        uses: toshimaru/auto-author-assign@v1
+        uses: toshimaru/auto-author-assign@v1.4.0
 
   apply-labels:
     name: Apply Labels
@@ -19,3 +19,5 @@ jobs:
       # Automatically apply labels based on the commits
       - name: Apply Labels
         uses: action-runner/conventional-labeler@v1
+        with:
+          access_token: ${{ github.token }}
