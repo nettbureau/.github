@@ -11,10 +11,6 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      # Check out the code in the repository
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
       # Set up Node and install all dependencies
       - name: Install Dependencies
         uses: nettbureau/.github/.github/actions/install@main
