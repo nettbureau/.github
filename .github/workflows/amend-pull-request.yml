@@ -18,6 +18,4 @@ jobs:
     steps:
       # Automatically apply labels based on the commits
       - name: Apply Labels
-        uses: action-runner/conventional-labeler@v1
-        with:
-          access_token: ${{ github.token }}
+      - uses: bcoe/conventional-release-labels@v1
