@@ -7,8 +7,8 @@ on:
         required: true
 
 permissions:
-  contents: write
-  packages: write
+  contents: [read, write]
+  packages: [read, write]
 
 jobs:
   release:
