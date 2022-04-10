@@ -8,8 +8,6 @@ on:
       RELEASE_TOKEN:
         required: true
 
-permissions: write-all
-
 jobs:
   release:
     name: Release
