@@ -27,6 +27,7 @@ jobs:
       - name: Report Size
         uses: preactjs/compressed-size-action@v2
         with:
+          repo-token: ${{ secrets.REPORT_TOKEN }}
           pattern: ${{ inputs.pattern }}
         env:
           GITHUB_TOKEN: ${{ secrets.REPORT_TOKEN }}
