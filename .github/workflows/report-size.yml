@@ -6,9 +6,6 @@ on:
       pattern:
         type: string
         default: "./{apps,packages}/*/dist/*.{js,css}"
-    secrets:
-      REPORT_TOKEN:
-        required: true
 
 jobs:
   report-size:
@@ -24,4 +21,7 @@ jobs:
         with:
           pattern: ${{ inputs.pattern }}
         env:
-          GITHUB_TOKEN: ${{ secrets.REPORT_TOKEN }}
+          GIT_AUTHOR_NAME: nettbureaubot
+          GIT_AUTHOR_EMAIL: dev@nettbureau.no
+          GIT_COMMITTER_NAME: nettbureaubot
+          GIT_COMMITTER_EMAIL: dev@nettbureau.no
