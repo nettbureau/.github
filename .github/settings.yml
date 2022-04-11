@@ -48,5 +48,6 @@ branches:
           users: []
           teams: []
       required_status_checks:
+        contexts: [Verify / Build, Verify / Lint, Verify / Test]
       restrictions:
         users: [nettbureaubot]
