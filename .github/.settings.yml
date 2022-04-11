@@ -1,0 +1,52 @@
+repository:
+  has_issues: false
+  has_projects: false
+  has_wiki: false
+  default_branch: main
+  allow_squash_merge: false
+  allow_merge_commit: true
+  allow_rebase_merge: false
+  delete_branch_on_merge: true
+  enable_automated_security_fixes: true
+  enable_vulnerability_alerts: true
+labels:
+  - name: devops
+    description: CI/CD related changes
+    color: "#eab308"
+
+  - name: documentation
+    description: Improvements or additions to documentation
+    color: "#0ea5e9"
+
+  - name: feature
+    description: New feature or request
+    color: "#a855f7"
+
+  - name: fix
+    description: Bug has been fixed
+    color: "#ef4444"
+
+  - name: refactor
+    color: "#10b981"
+    description: Improvements to code style
+
+  - name: released
+    color: "#cbd5e1"
+    description: This code is included in a release
+
+teams:
+  - name: Developers
+    permission: maintain
+
+branches:
+  - name: main
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        dismiss_stale_reviews: true
+        dismissal_restrictions:
+          users: []
+          teams: []
+      required_status_checks:
+      restrictions:
+        users: [nettbureaubot]
