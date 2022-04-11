@@ -10,6 +10,9 @@ on:
       REPORT_TOKEN:
         required: true
 
+env:
+  GITHUB_TOKEN: ${{ secrets.REPORT_TOKEN }}
+
 jobs:
   report-size:
     name: Report Size
