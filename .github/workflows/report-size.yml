@@ -6,6 +6,9 @@ on:
       pattern:
         type: string
         default: "./{apps,packages}/*/dist/*.{js,css}"
+    secrets:
+      REPORT_TOKEN:
+        required: true
 
 jobs:
   report-size:
@@ -15,6 +18,8 @@ jobs:
       # Check out the code in the repository
       - name: Checkout Code
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.REPORT_TOKEN }}
 
       - name: Report Size
         uses: preactjs/compressed-size-action@v2
