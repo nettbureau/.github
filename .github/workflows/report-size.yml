@@ -6,12 +6,9 @@ on:
       pattern:
         type: string
         default: "./{apps,packages}/*/dist/*.{js,css}"
-    secrets:
-      REPORT_TOKEN:
+      token:
+        type: string
         required: true
-
-env:
-  GITHUB_TOKEN: ${{ secrets.REPORT_TOKEN }}
 
 jobs:
   report-size:
@@ -21,17 +18,10 @@ jobs:
       # Check out the code in the repository
       - name: Checkout Code
         uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.REPORT_TOKEN }}
 
+      # Comment on the pull request with a report of the size of the files
       - name: Report Size
         uses: preactjs/compressed-size-action@v2
         with:
-          repo-token: ${{ secrets.REPORT_TOKEN }}
           pattern: ${{ inputs.pattern }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.REPORT_TOKEN }}
-          GIT_AUTHOR_NAME: nettbureaubot
-          GIT_AUTHOR_EMAIL: dev@nettbureau.no
-          GIT_COMMITTER_NAME: nettbureaubot
-          GIT_COMMITTER_EMAIL: dev@nettbureau.no
+          repo-token: ${{ inputs.token }}
