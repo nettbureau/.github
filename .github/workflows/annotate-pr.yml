@@ -1,0 +1,28 @@
+name: Annotate Pull Request
+
+on:
+  workflow_call:
+    secrets:
+      REPO_TOKEN:
+        required: true
+
+jobs:
+  add-assignee:
+    name: Add Assignee
+    runs-on: ubuntu-latest
+    steps:
+      # Automatically add the author of the PR as the assignee
+      - name: Add Assignee
+        uses: toshimaru/auto-author-assign@v1.4.0
+        with:
+          repo-token: ${{ secrets.REPO_TOKEN }}
+
+  apply-labels:
+    name: Apply Labels
+    runs-on: ubuntu-latest
+    steps:
+      # Automatically apply labels based on the commits
+      - name: Apply Labels
+        uses: bcoe/conventional-release-labels@v1
+        with:
+          token: ${{ secrets.REPO_TOKEN }}
