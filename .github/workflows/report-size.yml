@@ -7,7 +7,7 @@ on:
         type: string
         default: "./{apps,packages}/*/dist/*.{js,css}"
     secrets:
-      REPORT_TOKEN:
+      REPO_TOKEN:
         required: true
 
 jobs:
@@ -24,4 +24,4 @@ jobs:
         uses: preactjs/compressed-size-action@v2
         with:
           pattern: ${{ inputs.pattern }}
-          repo-token: ${{ secrets.REPORT_TOKEN }}
+          repo-token: ${{ secrets.REPO_TOKEN }}
