@@ -12,6 +12,10 @@ jobs:
     name: Report Size
     runs-on: ubuntu-latest
     steps:
+      # Check out the code in the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
       - name: Report Size
         uses: preactjs/compressed-size-action@v2
         with:
