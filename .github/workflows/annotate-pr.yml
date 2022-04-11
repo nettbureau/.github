@@ -24,3 +24,13 @@ jobs:
       # Automatically apply labels based on the commits
       - name: Apply Labels
         uses: bcoe/conventional-release-labels@v1
+        with:
+          type_labels:
+            {
+              "feat": "feature",
+              "fix": "fix",
+              "refactor": "refactor",
+              "docs": "documentation",
+              "ci": "devops",
+            }
+          token: ${{ secrets.REPO_TOKEN }}
