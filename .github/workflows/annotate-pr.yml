@@ -24,5 +24,3 @@ jobs:
       # Automatically apply labels based on the commits
       - name: Apply Labels
         uses: bcoe/conventional-release-labels@v1
-        with:
-          token: ${{ secrets.REPO_TOKEN }}
