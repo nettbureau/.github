@@ -30,6 +30,6 @@ jobs:
             "fix": "fix",
             "refactor": "refactor",
             "docs": "documentation",
-            "ci": "devops",
+            "ci": "devops"
             }'
           token: ${{ secrets.REPO_TOKEN }}
