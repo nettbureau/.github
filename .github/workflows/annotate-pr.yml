@@ -27,4 +27,4 @@ jobs:
         with:
           github-token: ${{ secrets.REPO_TOKEN }}
           config-path: .github/labeler.yml
-          config-repo: config
+          config-repo: .github
