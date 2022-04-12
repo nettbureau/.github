@@ -9,6 +9,7 @@ repository:
   delete_branch_on_merge: true
   enable_automated_security_fixes: true
   enable_vulnerability_alerts: true
+
 labels:
   - name: chore
     description: Other changes that don't modify source or test files
