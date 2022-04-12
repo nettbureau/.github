@@ -1,0 +1,22 @@
+name: Synchronize Settings
+
+on:
+  workflow_call:
+    secrets:
+      REPO_TOKEN:
+        required: true
+
+jobs:
+  synchronize-settings:
+    name: Synchronize Settings
+    runs-on: ubuntu-latest
+    steps:
+      # Check out the code in the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Uses the Probot Settings app to synchronize repository settings
+      - name: Synchronize Settings
+        uses: elstudio/actions-settings@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
