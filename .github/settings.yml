@@ -41,17 +41,3 @@ labels:
 teams:
   - name: Developers
     permission: maintain
-
-branches:
-  - name: main
-    protection:
-      required_pull_request_reviews:
-        required_approving_review_count: 1
-        dismiss_stale_reviews: true
-        dismissal_restrictions:
-          users: []
-          teams: []
-      required_status_checks:
-        contexts: []
-      restrictions:
-        users: [nettbureaubot]
