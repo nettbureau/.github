@@ -25,6 +25,6 @@ jobs:
       - name: Apply Labels
         uses: flugg/multi-labeler@main
         with:
-          github-token: ${{ secrets.NETTBUREAUBOT_TOKEN }}
+          github-token: ${{ secrets.REPO_TOKEN }}
           config-path: .github/labeler.yml
           config-repo: nettbureau/.github
