@@ -59,7 +59,7 @@ branches:
           - "Verify / Build"
           - "Verify / Lint"
           - "Verify / Test"
-      enforce_admins: true
+      enforce_admins: null
       required_linear_history: null
       restrictions:
         apps: []
