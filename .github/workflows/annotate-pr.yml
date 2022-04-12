@@ -27,4 +27,4 @@ jobs:
         with:
           github-token: ${{ secrets.REPO_TOKEN }}
           config-path: .github/labeler.yml
-          repo-path: nettbureau/.github
+          config-repo: nettbureau/.github
