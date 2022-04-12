@@ -15,6 +15,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      # Fetch the latest branches from Git repository
+      - name: Fetch
+        run: git fetch
+
       # Uses the Probot Settings app to synchronize repository settings
       - name: Synchronize Settings
         uses: elstudio/actions-settings@v2
