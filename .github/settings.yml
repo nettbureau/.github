@@ -60,5 +60,5 @@ branches:
       required_linear_history: true
       restrictions:
         apps: []
-        users: [nettbureaubot]
+        users: []
         teams: []
