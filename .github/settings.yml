@@ -11,7 +11,7 @@ repository:
   enable_vulnerability_alerts: true
 labels:
   - name: chore
-    description: Other changes that don't modify src or test files
+    description: Other changes that don't modify source or test files
     color: "#eab308"
 
   - name: documentation
