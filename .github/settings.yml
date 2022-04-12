@@ -3,9 +3,9 @@ repository:
   has_projects: false
   has_wiki: false
   default_branch: main
-  allow_squash_merge: false
+  allow_squash_merge: true
   allow_merge_commit: true
-  allow_rebase_merge: false
+  allow_rebase_merge: true
   delete_branch_on_merge: true
   enable_automated_security_fixes: true
   enable_vulnerability_alerts: true
@@ -60,6 +60,7 @@ branches:
           - "Verify / Lint"
           - "Verify / Test"
       enforce_admins: true
+      required_linear_history: true
       restrictions:
         apps: []
         users:
