@@ -1,0 +1,32 @@
+version: v1
+
+labels:
+  - label: chore
+    sync: true
+    matcher:
+      commits: "^[chore|ci].*"
+
+  - label: documentation
+    sync: true
+    matcher:
+      commits: "^docs.*"
+
+  - label: feature
+    sync: true
+    matcher:
+      commits: "^feat.*"
+
+  - label: fix
+    sync: true
+    matcher:
+      commits: "^fix.*"
+
+  - label: refactor
+    sync: true
+    matcher:
+      commits: "^[refactor,style,perf].*"
+
+  - label: test
+    sync: true
+    matcher:
+      commits: "^[test].*"
