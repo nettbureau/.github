@@ -23,6 +23,8 @@ jobs:
     steps:
       # Automatically apply labels based on the commits
       - name: Apply Labels
-        uses: flugg/pull-request-labeler@main
+        uses: flugg/multi-labeler@main
         with:
-          token: ${{ secrets.REPO_TOKEN }}
+          github-token: ${{ secrets.NETTBUREAUBOT_TOKEN }}
+          config-path: .github/labeler.yml
+          config-repo: nettbureau/.github
