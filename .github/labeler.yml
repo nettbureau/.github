@@ -4,7 +4,7 @@ labels:
   - label: chore
     sync: true
     matcher:
-      commits: "^[chore|ci].*"
+      commits: "^(chore|ci).*"
 
   - label: documentation
     sync: true
@@ -24,9 +24,9 @@ labels:
   - label: refactor
     sync: true
     matcher:
-      commits: "^[refactor,style,perf].*"
+      commits: "^(refactor|style|perf).*"
 
   - label: test
     sync: true
     matcher:
-      commits: "^[test].*"
+      commits: "^test.*"
