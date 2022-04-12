@@ -60,7 +60,6 @@ branches:
           - "Verify / Lint"
           - "Verify / Test"
       enforce_admins: true
-      required_linear_history: true
       restrictions:
         apps: []
         users:
