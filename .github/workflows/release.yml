@@ -57,7 +57,7 @@ jobs:
 
       # Release packages using Auto
       - name: Release Packages
-        run: yarn auto shipit
+        run: yarn auto shipit --verbose
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
           NPM_TOKEN: ${{ github.token }}
