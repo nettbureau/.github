@@ -13,30 +13,30 @@ repository:
 labels:
   - name: chore
     description: Other changes that don't modify source or test files
-    color: "#eab308"
+    color: "#fde68a"
 
   - name: documentation
     description: Improvements or additions to documentation
-    color: "#0ea5e9"
+    color: "#bae6fd"
 
   - name: feature
     description: New feature or request
-    color: "#a855f7"
+    color: "#e9d5ff"
 
   - name: fix
     description: Bug has been fixed
-    color: "#f43f5e"
+    color: "#fca5a5"
 
   - name: refactor
-    color: "#10b981"
+    color: "#a7f3d0"
     description: Improvements to code style
 
   - name: released
-    color: "#cbd5e1"
+    color: "#e2e8f0"
     description: This code is included in a release
 
   - name: test
-    color: "#f97316"
+    color: "#fed7aa"
     description: Adding missing tests or correcting existing tests
 
 teams:

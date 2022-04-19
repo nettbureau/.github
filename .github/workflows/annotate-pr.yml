@@ -23,7 +23,7 @@ jobs:
     steps:
       # Automatically apply labels based on the commits
       - name: Apply Labels
-        uses: flugg/labelizer@main
+        uses: fuxingloh/multi-labeler@v1
         with:
           github-token: ${{ secrets.REPO_TOKEN }}
           config-path: .github/labeler.yml
