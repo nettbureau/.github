@@ -31,6 +31,10 @@ jobs:
           name: "lerna.json"
           json: '{"npmClient": "yarn", "useWorkspaces": true}'
 
+      # Create a Lerna configuration file
+      - name: Debug Lerna
+        run: ls -la
+
       # Fetch the latest tags from Git repository
       - name: Fetch Tags
         run: git fetch --unshallow --tags
