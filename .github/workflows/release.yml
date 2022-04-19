@@ -43,9 +43,17 @@ jobs:
       - name: Unset Header
         run: git config --local --unset http.https://github.com/.extraheader
 
+      # Create a Lerna configuration file
+      - name: Debug Lerna
+        run: ls -la
+
       # Build source code for release
       - name: Build Code
         run: yarn build
+
+      # Create a Lerna configuration file
+      - name: Debug Lerna
+        run: ls -la
 
       # Release packages using Auto
       - name: Release Packages
