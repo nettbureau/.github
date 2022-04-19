@@ -20,6 +20,17 @@ jobs:
           nettbureau-auth-token: ${{ github.token }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
 
+      # Install Lerna which Auto uses to resolve monorepo packages
+      - name: Install Lerna
+        run: yarn add lerna -DW
+
+      # Create a Lerna configuration file
+      - name: Configure Lerna
+        uses: jsdaniell/create-json@1.1.2
+        with:
+          name: "lerna.json"
+          json: '{"npmClient": "yarn", "useWorkspaces": true}'
+
       # Fetch the latest tags from Git repository
       - name: Fetch Tags
         run: git fetch --unshallow --tags
