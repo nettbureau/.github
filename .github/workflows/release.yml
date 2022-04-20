@@ -20,21 +20,6 @@ jobs:
           nettbureau-auth-token: ${{ github.token }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
 
-      # Install Lerna which Auto uses to resolve monorepo packages
-      - name: Install Lerna
-        run: yarn add lerna -DW
-
-      # Create a Lerna configuration file
-      - name: Configure Lerna
-        uses: jsdaniell/create-json@1.1.2
-        with:
-          name: "lerna.json"
-          json: '{"npmClient": "yarn", "useWorkspaces": true}'
-
-      # Create a Lerna configuration file
-      - name: Debug Lerna
-        run: ls -la
-
       # Fetch the latest tags from Git repository
       - name: Fetch Tags
         run: git fetch --unshallow --tags
@@ -43,17 +28,9 @@ jobs:
       - name: Unset Header
         run: git config --local --unset http.https://github.com/.extraheader
 
-      # Create a Lerna configuration file
-      - name: Debug Lerna
-        run: ls -la
-
       # Build source code for release
       - name: Build Code
         run: yarn build
-
-      # Create a Lerna configuration file
-      - name: Debug Lerna
-        run: ls -la
 
       # Release packages using Auto
       - name: Release Packages
