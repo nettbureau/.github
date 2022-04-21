@@ -1,6 +1,9 @@
 name: Install
 
 inputs:
+  node-version:
+    required: true
+    default: 16
   nettbureau-auth-token:
     required: true
   fontawesome-auth-token:
@@ -17,7 +20,7 @@ runs:
     - name: Setup Node
       uses: actions/setup-node@v3
       with:
-        node-version: 16
+        node-version: ${{ inputs.node-version }}
 
     # Add private registries to the .npmrc file to allow access to the private packages
     - name: Setup private registries
