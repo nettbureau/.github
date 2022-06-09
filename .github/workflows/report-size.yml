@@ -7,6 +7,8 @@ on:
         type: string
         default: "./{apps,packages}/*/dist/*.{js,css}"
     secrets:
+      AUTH_TOKEN:
+        required: true
       REPO_TOKEN:
         required: true
 
@@ -18,6 +20,13 @@ jobs:
       # Check out the code in the repository
       - name: Checkout Code
         uses: actions/checkout@v3
+
+      # Set up Node
+      - name: Set Up Node
+        uses: nettbureau/.github/.github/actions/install@main
+        with:
+          nettbureau-auth-token: ${{ secrets.AUTH_TOKEN }}
+          fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
 
       # Comment on the pull request with a report of the size of the files
       - name: Report Size

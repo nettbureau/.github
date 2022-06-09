@@ -15,12 +15,20 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     steps:
-      # Set up Node and install all dependencies
-      - name: Install Dependencies
+      # Check out the code in the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Set up Node
+      - name: Set Up Node
         uses: nettbureau/.github/.github/actions/install@main
         with:
           nettbureau-auth-token: ${{ secrets.AUTH_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
+
+      # Install all dependencies
+      - name: Install Dependencies
+        uses: nettbureau/.github/.github/actions/install@main
 
       # Fetch the latest tags from Git repository
       - name: Fetch Tags

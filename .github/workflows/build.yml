@@ -13,12 +13,20 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      # Set up Node and install all dependencies
-      - name: Install Dependencies
+      # Check out the code in the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Set up Node
+      - name: Set Up Node
         uses: nettbureau/.github/.github/actions/install@main
         with:
           nettbureau-auth-token: ${{ secrets.AUTH_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
+
+      # Install all dependencies
+      - name: Install Dependencies
+        uses: nettbureau/.github/.github/actions/install@main
 
       # Verify that the code meets the linting requirements
       - name: Check Linting
@@ -32,12 +40,16 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Set up Node and install all dependencies
-      - name: Install Dependencies
+      # Set up Node
+      - name: Set Up Node
         uses: nettbureau/.github/.github/actions/install@main
         with:
           nettbureau-auth-token: ${{ secrets.AUTH_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
+
+      # Install all dependencies
+      - name: Install Dependencies
+        uses: nettbureau/.github/.github/actions/install@main
 
       # Verify that all the tests pass
       - name: Check Tests
@@ -51,12 +63,16 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Set up Node and install all dependencies
-      - name: Install Dependencies
+      # Set up Node
+      - name: Set Up Node
         uses: nettbureau/.github/.github/actions/install@main
         with:
           nettbureau-auth-token: ${{ secrets.AUTH_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
+
+      # Install all dependencies
+      - name: Install Dependencies
+        uses: nettbureau/.github/.github/actions/install@main
 
       # Verify that the code builds
       - name: Build Code
