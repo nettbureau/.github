@@ -1,0 +1,28 @@
+name: Setup Node
+
+inputs:
+  node-version:
+    required: true
+    default: 16
+  nettbureau-auth-token:
+    required: true
+  fontawesome-auth-token:
+    required: true
+
+runs:
+  using: composite
+  steps:
+    # Install and set up Node.js
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ inputs.node-version }}
+
+    # Add private registries to the .npmrc file to allow access to the private packages
+    - name: Add Private Registries
+      run: |
+        npm config set "@nettbureau:registry" https://npm.pkg.github.com/
+        npm config set "//npm.pkg.github.com/:_authToken" ${{ inputs.nettbureau-auth-token }}
+        npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+        npm config set "//npm.fontawesome.com/:_authToken" ${{ inputs.fontawesome-auth-token }}
+      shell: bash
