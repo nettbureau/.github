@@ -9,6 +9,8 @@ on:
     secrets:
       AUTH_TOKEN:
         required: true
+      FONTAWESOME_AUTH_TOKEN:
+        required: true
       REPO_TOKEN:
         required: true
 
