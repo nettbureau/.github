@@ -25,7 +25,7 @@ jobs:
 
       # Set up Node
       - name: Set Up Node
-        uses: nettbureau/.github/.github/actions/install@main
+        uses: nettbureau/.github/.github/actions/setup-node@main
         with:
           nettbureau-auth-token: ${{ secrets.AUTH_TOKEN }}
           fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
