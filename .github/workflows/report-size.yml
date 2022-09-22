@@ -13,12 +13,17 @@ on:
         required: true
       REPO_TOKEN:
         required: true
+      ENV:
+        required: false
 
 jobs:
   report-size:
     name: Report Size
     runs-on: ubuntu-latest
     steps:
+      - name: Set environment variables
+        run: "echo ${{ secrets.ENV }} >> $GITHUB_ENV"
+
       # Check out the code in the repository
       - name: Checkout Code
         uses: actions/checkout@v3
