@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set environment variables
-        run: "echo ${{ secrets.ENV }} >> $GITHUB_ENV"
+        run: 'echo -e "${{ secrets.ENV }}" >> $GITHUB_ENV'
 
       # Check out the code in the repository
       - name: Checkout Code
