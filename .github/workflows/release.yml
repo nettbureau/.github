@@ -9,12 +9,17 @@ on:
         required: true
       RELEASE_TOKEN:
         required: true
+      ENV:
+        required: false
 
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
     steps:
+      - name: Set environment variables
+        run: 'echo -e "${{ secrets.ENV }}" >> $GITHUB_ENV'
+
       # Check out the code in the repository
       - name: Checkout Code
         uses: actions/checkout@v3
