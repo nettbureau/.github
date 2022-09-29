@@ -4,6 +4,7 @@ on:
   workflow_call:
     inputs:
       pattern:
+        required: false
         type: string
         default: "./{apps,packages}/*/dist/*.{js,css}"
     secrets:
@@ -33,4 +34,5 @@ jobs:
         uses: preactjs/compressed-size-action@v2
         with:
           pattern: ${{ inputs.pattern }}
+          exclude: "{**/node_modules/**}"
           repo-token: ${{ secrets.REPO_TOKEN }}
