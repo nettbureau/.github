@@ -34,5 +34,5 @@ jobs:
         uses: preactjs/compressed-size-action@v2
         with:
           pattern: ${{ inputs.pattern }}
-          exclude: "{**/node_modules/**}"
+          exclude: "{**/*.map,**/node_modules/**}"
           repo-token: ${{ secrets.REPO_TOKEN }}
