@@ -11,34 +11,11 @@ on:
         required: false
 
 jobs:
-  lint:
-    name: Lint
+  verify:
+    name: Verify
     runs-on: ubuntu-latest
     steps:
-      # Check out the code in the repository
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      # Set up Node
-      - name: Set Up Node
-        uses: nettbureau/.github/.github/actions/setup-node@main
-        with:
-          nettbureau-auth-token: ${{ secrets.AUTH_TOKEN }}
-          fontawesome-auth-token: ${{ secrets.FONTAWESOME_AUTH_TOKEN }}
-
-      # Install all dependencies
-      - name: Install Dependencies
-        uses: nettbureau/.github/.github/actions/install@main
-
-      # Verify that the code meets the linting requirements
-      - name: Check Linting
-        run: yarn lint
-
-  build-and-test:
-    name: Build & Test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set environment variables
+      - name: Set Environment Variables
         run: 'echo -e "${{ secrets.ENV }}" >> $GITHUB_ENV'
 
       # Check out the code in the repository
@@ -59,6 +36,10 @@ jobs:
       # Verify that the code builds
       - name: Build Code
         run: yarn build
+
+      # Verify that the code meets the linting requirements
+      - name: Check Linting
+        run: yarn lint
 
       # Verify that all the tests pass
       - name: Check Tests
