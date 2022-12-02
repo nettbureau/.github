@@ -13,7 +13,7 @@ jobs:
     steps:
       # Automatically add the author of the PR as the assignee
       - name: Add Assignee
-        uses: toshimaru/auto-author-assign@v1.4.0
+        uses: toshimaru/auto-author-assign@v1.6.1
         with:
           repo-token: ${{ secrets.REPO_TOKEN }}
 
@@ -23,7 +23,7 @@ jobs:
     steps:
       # Automatically apply labels based on the commits
       - name: Apply Labels
-        uses: fuxingloh/multi-labeler@v1
+        uses: fuxingloh/multi-labeler@v2.0.1
         with:
           github-token: ${{ secrets.REPO_TOKEN }}
           config-path: .github/labeler.yml
