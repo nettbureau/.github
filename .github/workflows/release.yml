@@ -1,4 +1,4 @@
-name: Install
+name: Release
 
 on:
   workflow_call:
@@ -54,10 +54,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
           NPM_TOKEN: ${{ github.token }}
 
-      # Dispatch event to update the documentation website
-      - name: Deploy documentation
+      # Dispatch event to deploy the documentation
+      - name: Deploy Documentation
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ secrets.NETTBUREAUBOT_TOKEN }}
+          token: ${{ github.token }}
           repository: nettbureau/docs
           event-type: deploy-wiki
