@@ -38,7 +38,7 @@ jobs:
 
       # Comment on the pull request with a report of the size of the files
       - name: Report Size
-        uses: preactjs/compressed-size-action@v2
+        uses: preactjs/compressed-size-action@master
         with:
           pattern: ${{ inputs.pattern }}
           exclude: "{**/*.map,**/node_modules/**}"
