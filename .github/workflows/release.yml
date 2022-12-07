@@ -9,6 +9,8 @@ on:
         required: true
       RELEASE_TOKEN:
         required: true
+      REPO_TOKEN:
+        required: true
       ENV:
         required: false
 
@@ -17,7 +19,7 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     steps:
-      - name: Set environment variables
+      - name: Set Environment Variables
         run: 'echo -e "${{ secrets.ENV }}" >> $GITHUB_ENV'
 
       # Check out the code in the repository
@@ -58,6 +60,6 @@ jobs:
       - name: Deploy Documentation
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{ github.token }}
+          token: ${{ secrets.REPO_TOKEN }}
           repository: nettbureau/docs
           event-type: deploy-wiki
