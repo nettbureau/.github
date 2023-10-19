@@ -1,13 +1,17 @@
 name: Setup Node
+description: Installs and sets up Node and npm
 
 inputs:
   node-version:
+    description: Version of Node to install
     required: true
-    default: 16
+    default: "18"
   nettbureau-auth-token:
     required: true
+    description: Token that allows installing packages from our private Github package registry
   fontawesome-auth-token:
     required: true
+    description: Token that allows installing packages from Font Awesome
 
 runs:
   using: composite
@@ -18,7 +22,7 @@ runs:
       with:
         node-version: ${{ inputs.node-version }}
 
-    # Add private registries to the .npmrc file to allow access to the private packages
+    # Add private registries to the npm configuration file to allow access to the private packages
     - name: Add Private Registries
       run: |
         npm config set "@nettbureau:registry" https://npm.pkg.github.com/

@@ -1,4 +1,5 @@
 name: Install
+description: Installs dependencies using Yarn
 
 runs:
   using: composite
