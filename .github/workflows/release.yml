@@ -21,7 +21,7 @@ jobs:
     # To use Turborepo Remote Caching, set the following environment variables for the job.
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
-      TURBO_TEAM: "nettbureau-dev"
+      TURBO_TEAM: "nettbureau"
     steps:
       - name: Set Environment Variables
         run: 'echo -e "${{ secrets.ENV }}" >> $GITHUB_ENV'
