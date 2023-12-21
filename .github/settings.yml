@@ -51,7 +51,7 @@ branches:
         strict: true
         contexts:
           - "Verify / Verify"
-      enforce_admins: true
+      enforce_admins: false
       required_linear_history: null
       restrictions:
         apps: []
