@@ -1,44 +1,31 @@
-## Description
+## 🚀 Quick Summary
+<!-- Provide a brief, 1-2 sentence description of your changes -->
 
-Provide a concise summary of the changes in this pull request. Include:
+## 🔗 Related Issue
+<!-- Link to GitHub issue or Shortcut ID (if applicable) -->
+Fixes #
 
-- The problem or feature this PR addresses
-- Motivation behind the changes
-- Any relevant context or background information
-- Dependencies or prerequisites for this change
+## ✅ Changes Made
+<!-- List 1-3 key changes. Use bullet points for readability -->
+-
+-
+-
 
-Fixes # (issue number, if applicable)
-
-## Changes Made
-
-List the key changes made in this PR:
-
+## 🧪 Testing
+<!-- How can reviewers test your changes? Keep it simple -->
 1.
 2.
-3.
 
-## Testing
+## 📸 Screenshots (if applicable)
+<!-- Add screenshots or GIFs for visual changes -->
 
-Describe how you tested these changes. Include:
+## 📝 Additional Notes
+<!-- Any extra info for reviewers? (optional) -->
 
-- Steps to reproduce or test the changes
-- Any specific test cases or scenarios covered
-- Tools or environments used for testing
-
-## Checklist
-
-- [ ] Code follows project style guidelines
-- [ ] Self-review of code completed
-- [ ] Comments added for complex sections
-- [ ] Documentation updated (if required)
-- [ ] No new warnings introduced
-- [ ] Tests added/updated and passing
-- [ ] Verified changes in UI/UX (if applicable)
-
-## Screenshots (if applicable)
-
-Add any relevant screenshots or GIFs here to demonstrate UI changes.
-
-## Additional Notes
-
-Include any additional information, concerns, or questions for reviewers.
+<!-- 
+Pro tips:
+- Keep it concise! Aim for 5 minutes or less to complete this template.
+- Use emojis to make it visually appealing and easier to scan.
+- If a section doesn't apply, feel free to remove it.
+- But never leave it blank!
+-->
