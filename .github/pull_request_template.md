@@ -11,16 +11,12 @@ Fixes #
 -
 -
 
-## 🧪 Testing
-<!-- How can reviewers test your changes? Keep it simple -->
-1.
-2.
-
 ## 📸 Screenshots (if applicable)
 <!-- Add screenshots or GIFs for visual changes -->
 
 ## 📝 Additional Notes
 <!-- Any extra info for reviewers? (optional) -->
+<!-- Include testing instructions here if necessary -->
 
 <!-- 
 Pro tips:
@@ -28,4 +24,5 @@ Pro tips:
 - Use emojis to make it visually appealing and easier to scan.
 - If a section doesn't apply, feel free to remove it.
 - But never leave it blank!
+- Include testing instructions in the Additional Notes section if needed.
 -->
