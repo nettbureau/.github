@@ -13,7 +13,7 @@ on:
 jobs:
   verify:
     name: Verify
-    runs-on: warp-ubuntu-latest-arm64-4x-spot
+    runs-on: warp-ubuntu-latest-arm64-8x-spot
     # To use Turborepo Remote Caching, set the following environment variables for the job.
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
