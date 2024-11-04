@@ -9,7 +9,7 @@ on:
 jobs:
   add-assignee:
     name: Add Assignee
-    runs-on: ubuntu-latest
+    runs-on: warp-ubuntu-2204-x64-32x-spot
     steps:
       # Automatically add the author of the PR as the assignee
       - name: Add Assignee
@@ -19,7 +19,7 @@ jobs:
 
   apply-labels:
     name: Apply Labels
-    runs-on: ubuntu-latest
+    runs-on: warp-ubuntu-2204-x64-32x-spot
     steps:
       # Automatically apply labels based on the commits
       - name: Apply Labels

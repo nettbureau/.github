@@ -20,7 +20,7 @@ on:
 jobs:
   report-size:
     name: Report Size
-    runs-on: ubuntu-latest
+    runs-on: warp-ubuntu-2204-x64-32x-spot
     # To use Turborepo Remote Caching, set the following environment variables for the job.
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
