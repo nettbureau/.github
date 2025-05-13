@@ -1,2 +1,4 @@
+# Security Policy
+
 - Please do not create GitHub issues to report security vulnerabilities.
 - Instead, report them to: [support@clerk.dev](mailto:support@clerk.dev)
