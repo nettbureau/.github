@@ -5,7 +5,7 @@ inputs:
   node-version:
     description: Version of Node to install
     required: true
-    default: "22"
+    default: "24"
   nettbureau-auth-token:
     required: true
     description: Token that allows installing packages from our private Github package registry
