@@ -2,6 +2,8 @@
 
 # Nettbureau
 
-Nettbureau is a Norwegian company with a curious name, countless computers and copious amounts of coffee.
+Nettbureau builds online platforms that connect users with great deals and suppliers with new customers through lead generation.
 
-Today, we are one of Scandinavia's leading providers of comparison services, and are expanding across Europe – with operations in Norway, Sweden, Denmark, Spain, Italy and Germany.
+Every year, we connect millions of users with our partners through bespoke technology designed to benefit both parties. Almost everything we do is built in-house, and we invest heavily in technology. We're a technology company, after all.
+
+Do you want to join us? Connect with us on our career site: [careers.nettbureau.com](careers.nettbureau.com).
